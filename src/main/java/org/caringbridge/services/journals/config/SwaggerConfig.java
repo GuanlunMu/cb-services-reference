@@ -1,4 +1,4 @@
-package org.caringbridge.services.reference.config;
+package org.caringbridge.services.journals.config;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Configuration for Swagger Doc Api.
- * 
+ *
  * @author guanlun.mu
  *
  */
@@ -61,18 +61,18 @@ public class SwaggerConfig {
 
     @Value(value = "${org.caringbridge.services.version}")
     private String swaggerApiVersion;
-    
+
     @Value(value = "${app.name}")
     private String appName;
-    
+
     @Value(value = "${org.caringbridge.services.swagger.uri-base}")
     private String swaggerUriBase;
 
     @Bean
     public Docket swaggerSpringMvcPlugin() {
         return new Docket(DocumentationType.SWAGGER_2)
-            .select() 
-            .apis(RequestHandlerSelectors.any()) 
+            .select()
+            .apis(RequestHandlerSelectors.any())
             .paths(regex(swaggerUriBase + ".*"))
             .build()
             .apiInfo(apiInfo());

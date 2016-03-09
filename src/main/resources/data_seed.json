@@ -1,0 +1,58 @@
+{
+	"test": 
+	[
+		{
+			"test": "This collection and item should always be here just to test seed of data and have a description"
+		}
+	],
+	"journal":
+	[
+		{
+		  "_id": "51e5bce9f294d4e84eaedb87",
+		  "createdAt": {"$date": "2013-07-16T21:36:41.000Z"},
+		  "updatedAt": {"$date": "2013-07-16T21:36:41.000Z"},
+		  "siteId": 9,
+		  "userId": 2,
+		  "body": "This is a good journal entry that is neither in draft or deleted.",
+		  "title": "Good journal entry"
+		},	
+		{
+		  "_id": "527a5c2af294d47d623e8276",
+		  "createdAt": {"$date": "2013-11-06T15:11:38.000Z"},
+		  "updatedAt": {"$date": "2013-11-06T15:11:38.000Z"},
+		  "siteId": 145,
+		  "userId": 104,
+		  "isDraft": "1",
+		  "title": "Journal as draft",
+		  "draft": {
+		    "id": "527a5c2af294d47d623e8271",
+		    "body": "test",
+		    "title": "Journal as draft"
+		  },
+		  "pendingPublish": "1"
+		},
+		{
+		  "_id": "52960fc0f294d4163c3c1687",
+		  "createdAt": {"$date": "2013-11-27T15:29:04.000Z"},
+		  "updatedAt": {"$date": "2013-11-27T15:29:04.000Z"},
+		  "siteId": 170,
+		  "userId": 23,
+		  "body": "test",
+		  "isDraft": "1",
+		  "title": "Another draft",
+		  "pendingPublish": "1"
+		},
+		{
+		  "_id": "52013db2f294d4550ecc255e",
+		  "body": "This is my other auto save<br><br>adding more stuff<br>",
+		  "createdAt": {"$date": "2013-08-06T18:17:22.000Z"},
+		  "isDeleted": "1",
+		  "isDraft": "1",
+		  "lastEdit": {"$date": "2013-08-06T18:39:36.000Z"},
+		  "siteId": 83,
+		  "title": "Testing - Deleted",
+		  "updatedAt": {"$date": "2013-08-06T18:17:22.000Z"},
+		  "userId": 71
+		}
+	]
+}

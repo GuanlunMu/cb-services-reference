@@ -1,4 +1,4 @@
-package org.caringbridge.services.reference.controllers;
+package org.caringbridge.services.journals.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,37 +13,26 @@ import io.swagger.annotations.ApiResponse;
 
 /**
  * Controller for handling the request by mapping url.
- * 
+ *
  * @author guanlun.mu
  *
  */
 @RestController
-@Api(basePath = "/references", description = "The references resource is a dummy api for demonstration purposes.", value = "references")
-@RequestMapping(path = "/references")
+@Api(basePath = "/journals/ping", description = "The ping resource is a simple test to bootstrap", value = "ping")
+@RequestMapping(path = "/journals/ping")
 public class PingController {
-
-	/**
-	 * The log.
-	 */
-	private static final Logger LOG = LoggerFactory.getLogger(PingController.class);
-
-	/**
-	 * @return the log
-	 */
-	public Logger getLog() {
-		return LOG;
-	}
+	private static final Logger log = LoggerFactory.getLogger(PingController.class);
 
 	/**
 	 * A Ping controller to check the health of the controller.
-	 * 
+	 *
 	 * @return Response entity that only display a message.
 	 */
-	@RequestMapping(path="/ping", method = RequestMethod.GET, produces = "application/json")
-	@ApiOperation(value = "ping", httpMethod = "GET", notes = "Responds with a success result if the service is healthy.", produces = "application/json")
+	@RequestMapping(path={"/",""}, method = RequestMethod.GET, produces = "application/json")
+	@ApiOperation(value = "", httpMethod = "GET", notes = "Responds with a success result if the service is healthy.", produces = "application/json")
 	@ApiResponse(code = 404, message = "No Information Found for this Provider")
 	public ResponseEntity<PingResult> ping() {
-		getLog().info("Getting the ping info......");
+		log.info("Getting the ping info......");
 		return ResponseEntity.ok(new PingResult("success"));
 
 	}
